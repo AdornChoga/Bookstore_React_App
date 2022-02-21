@@ -1,0 +1,21 @@
+.add-book-section {
+  margin-top: 3rem;
+}
+
+.add-book-form {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.book-input {
+  width: 60%;
+}
+
+.book-category {
+  width: 25%;
+}
+
+.submit-book {
+  width: 15%;
+}
