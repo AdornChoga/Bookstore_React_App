@@ -1,16 +1,39 @@
 import './Navbar.css';
+import { NavLink } from 'react-router-dom';
+import { FaRegUserCircle } from 'react-icons/fa';
 
-const Navbar = () => (
-  <header>
-    <nav>
-      <ul>
-        <li>BookStore CMS</li>
-        <li>BOOKS</li>
-        <li>CATEGORIES</li>
-        <li className="profile">profile</li>
-      </ul>
-    </nav>
-  </header>
-);
+const Navbar = () => {
+  const navLinks = [
+    {
+      id: 1,
+      path: '/',
+      title: 'BOOKS',
+    },
+    {
+      id: 2,
+      path: 'categories',
+      title: 'CATEGORIES',
+    },
+  ];
+  return (
+    <header>
+      <nav>
+        <ul>
+          <li>BookStore CMS</li>
+          {
+          navLinks.map((link) => (
+            <li key={link.id}>
+              <NavLink to={link.path}>
+                {link.title}
+              </NavLink>
+            </li>
+          ))
+        }
+          <li className="profile"><FaRegUserCircle /></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
 
 export default Navbar;
