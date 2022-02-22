@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import View from './view/View';
-import Navbar from './components/navbar/Navbar.js';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Navbar />
       <View />
     </Router>
   </React.StrictMode>,
