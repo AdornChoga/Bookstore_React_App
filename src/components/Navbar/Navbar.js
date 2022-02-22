@@ -1,4 +1,4 @@
-import './Navbar.css';
+import './navbar.css';
 import { NavLink } from 'react-router-dom';
 import { FaRegUserCircle } from 'react-icons/fa';
 
