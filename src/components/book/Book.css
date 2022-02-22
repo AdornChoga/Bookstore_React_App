@@ -11,6 +11,34 @@ ul {
   list-style-type: none;
 }
 
+#category {
+  color: gray;
+}
+
+#title {
+  color: black;
+  font-size: 2rem;
+}
+
+#author {
+  color: gray;
+}
+
+.remove-book {
+  background-color: white;
+  color: blue;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-book:active {
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+}
+
 .book-operations {
   display: flex;
   gap: 1rem;
@@ -23,7 +51,6 @@ ul {
 
 .progress-and-chapter {
   display: flex;
-  border: solid;
 }
 
 .progress {
