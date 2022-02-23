@@ -3,7 +3,7 @@ import Book from '../book/Book';
 import NewBookForm from '../new-book-form/NewBookForm';
 
 const BooksPage = () => {
-  const bookInfo = useSelector((state) => state);
+  const bookInfo = useSelector((state) => state.addRemoveBook);
   return (
     <main>
       {

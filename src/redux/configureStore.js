@@ -1,6 +1,11 @@
-import { createStore } from 'redux';
-import { addRemoveBook, initialState } from './books';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import { addRemoveBook } from './books';
 
-const store = createStore(addRemoveBook, initialState);
+const rootReducer = combineReducers({
+  addRemoveBook,
+});
+
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 export default store;

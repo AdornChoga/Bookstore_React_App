@@ -3,16 +3,7 @@ const ACTIONS = {
   REMOVEBOOK: 'book/remove-book',
 };
 
-const initialState = [
-  {
-    bookTitle: 'The Hunger Games',
-    category: 'Action',
-    author: 'Suzanne Collins',
-    progress: '0%',
-    chapter: 'Introduction',
-    id: 1,
-  },
-];
+const initialState = [];
 
 const addRemoveBook = (state = initialState, action) => {
   switch (action.type) {

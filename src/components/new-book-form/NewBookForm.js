@@ -1,6 +1,7 @@
 import './AddBook.css';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { ACTIONS } from '../../redux/books';
 
 const NewBookForm = () => {
@@ -22,7 +23,7 @@ const NewBookForm = () => {
         author: 'author: Author',
         progress: '0%',
         chapter: 'Introduction',
-        id: Date.now(),
+        id: uuidv4(),
       },
     });
   };

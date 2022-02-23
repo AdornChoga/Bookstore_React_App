@@ -57,7 +57,7 @@ Book.propTypes = {
     category: PropTypes.string.isRequired,
     progress: PropTypes.string.isRequired,
     chapter: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
 };
 
