@@ -3,6 +3,16 @@ const ACTIONS = {
   REMOVEBOOK: 'book/remove-book',
 };
 
+const addBook = (data) => ({
+  type: ACTIONS.ADDBOOK,
+  payload: data,
+});
+
+const removeBook = (data) => ({
+  type: ACTIONS.REMOVEBOOK,
+  payload: data,
+});
+
 const initialState = [];
 
 const addRemoveBook = (state = initialState, action) => {
@@ -16,4 +26,6 @@ const addRemoveBook = (state = initialState, action) => {
   }
 };
 
-export { ACTIONS, initialState, addRemoveBook };
+export {
+  ACTIONS, addBook, removeBook, addRemoveBook,
+};

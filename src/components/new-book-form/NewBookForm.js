@@ -2,7 +2,7 @@ import './AddBook.css';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { ACTIONS } from '../../redux/books';
+import { addBook } from '../../redux/books';
 
 const NewBookForm = () => {
   const [bookInfo, setInfo] = useState({ bookTitle: '', category: '' });
@@ -15,17 +15,15 @@ const NewBookForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({
-      type: ACTIONS.ADDBOOK,
-      payload: {
-        bookTitle: bookInfo.bookTitle,
-        category: bookInfo.category,
-        author: 'author: Author',
-        progress: '0%',
-        chapter: 'Introduction',
-        id: uuidv4(),
-      },
-    });
+    const payloadData = {
+      bookTitle: bookInfo.bookTitle,
+      category: bookInfo.category,
+      author: 'author: Author',
+      progress: '0%',
+      chapter: 'Introduction',
+      id: uuidv4(),
+    };
+    dispatch(addBook(payloadData));
   };
   return (
     <div className="add-book-section">

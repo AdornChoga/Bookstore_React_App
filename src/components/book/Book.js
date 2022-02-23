@@ -2,7 +2,7 @@ import './Book.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { ACTIONS } from '../../redux/books';
+import { removeBook } from '../../redux/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();
@@ -12,10 +12,7 @@ const Book = (props) => {
   } = bookInfo;
 
   const handleRemove = () => {
-    dispatch({
-      type: ACTIONS.REMOVEBOOK,
-      payload: { id },
-    });
+    dispatch(removeBook({ id }));
   };
   return (
     <div className="books-container" key={id}>
