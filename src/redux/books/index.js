@@ -1,15 +1,16 @@
-// import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import bookApp from '../../logic/local_storage';
 
 const ACTIONS = {
+  INITIALIZE: 'book/state/initialize',
   ADDBOOK: 'book/add-book',
   REMOVEBOOK: 'book/remove-book',
 };
 
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+const { appId } = bookApp.fetchApp();
+
 const addBook = (payload) => async (dispatch) => {
-  const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
-  const { appId } = bookApp.fetchApp();
   const requestBody = {
     item_id: payload.id,
     title: payload.bookTitle,
@@ -24,12 +25,17 @@ const addBook = (payload) => async (dispatch) => {
 };
 
 const removeBook = (payload) => async (dispatch) => {
-  const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
-  const { appId } = bookApp.fetchApp();
   const bookId = payload.id;
   await axios.delete(`${baseUrl}${appId}/books/${bookId}`);
   dispatch({ type: ACTIONS.REMOVEBOOK, payload: { id: bookId } });
 };
+
+const initializeState = (payload) => (
+  {
+    type: ACTIONS.INITIALIZE,
+    payload,
+  }
+);
 
 const addRemoveBook = (state = [], action) => {
   switch (action.type) {
@@ -37,11 +43,13 @@ const addRemoveBook = (state = [], action) => {
       return [...state, action.payload];
     case ACTIONS.REMOVEBOOK:
       return state.filter((book) => book.id !== action.payload.id);
+    case ACTIONS.INITIALIZE:
+      return action.payload;
     default:
       return state;
   }
 };
 
 export {
-  ACTIONS, addBook, removeBook, addRemoveBook,
+  ACTIONS, addBook, removeBook, addRemoveBook, initializeState,
 };
