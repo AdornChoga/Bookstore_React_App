@@ -18,9 +18,6 @@ const NewBookForm = () => {
     const payloadData = {
       bookTitle: bookInfo.bookTitle,
       category: bookInfo.category,
-      author: 'author: Author',
-      progress: '0%',
-      chapter: 'Introduction',
       id: uuidv4(),
     };
     dispatch(addBook(payloadData));
