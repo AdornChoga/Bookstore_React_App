@@ -1,27 +1,28 @@
 import './Book.css';
-import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { ACTIONS } from '../../redux/books';
+import { removeBook } from '../../redux/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();
   const { bookInfo } = props;
   const {
-    bookTitle, category, author, progress, chapter, id,
+    title, category, id,
   } = bookInfo;
 
+  const { author, progress, chapter } = {
+    author: 'author: Author',
+    progress: '0%',
+    chapter: 'Introduction',
+  };
   const handleRemove = () => {
-    dispatch({
-      type: ACTIONS.REMOVEBOOK,
-      payload: { id },
-    });
+    dispatch(removeBook({ id }));
   };
   return (
-    <div className="books-container" key={id}>
+    <div className="books-container">
       <ul>
         <li id="category">{category}</li>
-        <li id="title">{bookTitle}</li>
+        <li id="title">{title}</li>
         <li id="author">{author}</li>
         <li className="book-operations">
           <p>Comments</p>
@@ -52,11 +53,8 @@ const Book = (props) => {
 
 Book.propTypes = {
   bookInfo: PropTypes.shape({
-    bookTitle: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    progress: PropTypes.string.isRequired,
-    chapter: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
 };
