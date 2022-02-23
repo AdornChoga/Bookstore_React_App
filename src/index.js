@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
 import Navbar from './components/navbar/Navbar';
 import View from './view/View';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Navbar />
-      <View />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <View />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

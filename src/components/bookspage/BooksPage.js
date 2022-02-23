@@ -1,13 +1,19 @@
+import { useSelector } from 'react-redux';
 import Book from '../book/Book';
-import AddBook from '../addbook/AddBook';
+import NewBookForm from '../new-book-form/NewBookForm';
 
-const BooksPage = () => (
-  <main>
-    <Book />
-    <Book />
-    <Book />
-    <AddBook />
-  </main>
-);
+const BooksPage = () => {
+  const bookInfo = useSelector((state) => state.addRemoveBook);
+  return (
+    <main>
+      {
+        bookInfo.map((info) => (
+          <Book key={info.id} bookInfo={info} />
+        ))
+      }
+      <NewBookForm />
+    </main>
+  );
+};
 
 export default BooksPage;
