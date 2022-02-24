@@ -16,20 +16,20 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 0.05rem solid silver;
+  height: 4rem;
+  border-bottom: 0.2rem solid;
   z-index: 1;
-  background-color: #fff;
+  background-color: white;
 }
 
 nav {
-  padding: 0.5rem 4rem;
+  padding: 0 4rem;
 }
 
 nav ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
   list-style: none;
   padding-left: 0;
   gap: 2rem;
@@ -37,28 +37,9 @@ nav ul {
 
 nav ul li:first-child {
   font-size: 2rem;
-  color: #0290ff;
-  font-weight: bold;
-}
-
-a {
-  text-decoration: none;
-  color: gray;
-}
-
-.active {
-  color: black;
 }
 
 .profile {
   margin-left: auto;
   font-size: 1.5rem;
-  border: solid black;
-  border-radius: 50%;
-  text-align: center;
-  padding: 0.5%;
-  width: 3rem;
-  height: 3rem;
-  line-height: 0;
-  color: #0290ff;
 }
