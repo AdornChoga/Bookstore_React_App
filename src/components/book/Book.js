@@ -1,19 +1,23 @@
 import './Book.css';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books';
 
 const Book = (props) => {
+  const [progress] = useState({ progressValue: 64 });
   const dispatch = useDispatch();
   const { bookInfo } = props;
   const {
     title, category, id,
   } = bookInfo;
 
-  const { author, progress, chapter } = {
-    author: 'author: Author',
-    progress: '0%',
-    chapter: 'Introduction',
+  const { author, chapter } = {
+    author: 'author here',
+    completed: '0%',
+    chapter: 'Chapter 17',
   };
   const handleRemove = () => {
     dispatch(removeBook({ id }));
@@ -21,29 +25,33 @@ const Book = (props) => {
   return (
     <div className="books-container">
       <ul>
-        <li id="category">{category}</li>
-        <li id="title">{title}</li>
-        <li id="author">{author}</li>
+        <li className="main-info">
+          <p id="category">{category}</p>
+          <h1 id="title">{title}</h1>
+          <p id="author">{author}</p>
+        </li>
         <li className="book-operations">
-          <p>Comments</p>
+          <button type="button" className="comments">Comments</button>
           <button type="button" className="remove-book" onClick={handleRemove}>Remove</button>
-          <p>Edit</p>
+          <button type="button" className="edit">Edit</button>
         </li>
       </ul>
       <div className="progress-and-chapter">
-        <ul className="progress">
-          <li>Photo</li>
+        <ul className="progress-scale">
+          <li className="progress-bar">
+            <CircularProgressbar value={progress.progressValue} />
+          </li>
           <li>
-            <span>{progress}</span>
+            <span id="percentage">{`${progress.progressValue}%`}</span>
             <br />
-            <span>Completed</span>
+            <span id="completed">Completed</span>
           </li>
         </ul>
-        <ul>
-          <li>Current Chapter</li>
-          <li>{chapter}</li>
+        <ul className="progress">
+          <li id="current-chapter">CURRENT CHAPTER</li>
+          <li id="chapter">{chapter}</li>
           <li>
-            <button type="button" className="update-progress">Update Progress</button>
+            <button type="button" className="update-progress">UPDATE PROGRESS</button>
           </li>
         </ul>
       </div>

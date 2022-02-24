@@ -6,7 +6,7 @@
 > In this project I created a single page application with all tow pages (books and categories) being routed using React routes. The main features of this app are:
 > Adding a new book
 > Specifying category of book.
-> Viewing extensive information about each book added
+> Viewing more information about each book added
 
 ## Built With
 
@@ -16,6 +16,10 @@
 - CSS
 
 ## Live Demo
+
+[View Live on Heroku](https://adorn-bookstore.herokuapp.com/)
+
+[View Live on Netlify](https://focused-brattain-925daa.netlify.app/)
 
 ## Getting Started
 
