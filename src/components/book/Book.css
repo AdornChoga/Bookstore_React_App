@@ -25,7 +25,6 @@ ul {
 
 .main-info * {
   margin: 0;
-  font-family: sans-serif;
 }
 
 #category {
@@ -82,7 +81,6 @@ ul {
 
 #percentage {
   font-size: 2.5rem;
-  font-family: sans-serif;
 }
 
 #completed {
@@ -113,13 +111,11 @@ ul {
 }
 
 #current-chapter {
-  font-family: sans-serif;
   color: silver;
 }
 
 #chapter {
   font-size: 1.6rem;
-  font-family: sans-serif;
 }
 
 .update-progress {

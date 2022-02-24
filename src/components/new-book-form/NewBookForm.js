@@ -36,11 +36,11 @@ const NewBookForm = () => {
         <input type="text" placeholder="Book title" className="book-input" value={bookInfo.bookTitle} onChange={handleTitle} />
         <select className="book-category" onChange={handleCategory} onClick={setDisabled}>
           <option select="true">Category</option>
-          <option value="category1">Action</option>
-          <option value="category3">Romance</option>
-          <option value="category3">Sci-Fi</option>
-          <option value="category3">Finance</option>
-          <option value="category3">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Romance">Romance</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Finance">Finance</option>
+          <option value="Drama">Drama</option>
         </select>
         <button type="submit" className="submit-book" onClick={handleSubmit}>ADD BOOK</button>
       </form>

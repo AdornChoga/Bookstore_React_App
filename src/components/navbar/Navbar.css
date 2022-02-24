@@ -38,14 +38,12 @@ nav ul {
 nav ul li:first-child {
   font-size: 2rem;
   color: #0290ff;
-  font-family: sans-serif;
   font-weight: bold;
 }
 
 a {
   text-decoration: none;
   color: gray;
-  font-family: sans-serif;
 }
 
 .active {
