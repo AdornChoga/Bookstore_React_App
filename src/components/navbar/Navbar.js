@@ -1,6 +1,6 @@
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
-import { FaRegUserCircle } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
   const navLinks = [
@@ -29,7 +29,7 @@ const Navbar = () => {
             </li>
           ))
         }
-          <li className="profile"><FaRegUserCircle /></li>
+          <li className="profile"><FaUser /></li>
         </ul>
       </nav>
     </header>
