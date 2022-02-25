@@ -24,7 +24,7 @@ const Book = (props) => {
   };
   return (
     <div className="books-container">
-      <div>
+      <div key={id}>
         <div className="main-info">
           <p id="category">{category}</p>
           <h1 id="title">{title}</h1>
