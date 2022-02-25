@@ -35,7 +35,7 @@ To run this application please follow these steps:
 ## Authors
 I worked on this project alone and here are my contact details
 
-- GitHub: [@asanchy](https://github.com/Asanchy)
+- GitHub: [@adornchoga](https://github.com/AdornChoga)
 - Twitter: [@adorn_choga](https://twitter.com/adorn_choga)
 - LinkedIn: [adorn-choga](https://www.linkedin.com/in/adorn-choga-076024201/)
 
