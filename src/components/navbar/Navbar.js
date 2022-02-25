@@ -2,6 +2,8 @@ import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 
+/* eslint-disable react/jsx-key */
+
 const Navbar = () => {
   const navLinks = [
     {

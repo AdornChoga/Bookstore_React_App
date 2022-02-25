@@ -6,6 +6,8 @@ import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../../redux/books';
 
+/* eslint-disable react/jsx-key */
+
 const Book = (props) => {
   const [progress] = useState({ progressValue: 64 });
   const dispatch = useDispatch();

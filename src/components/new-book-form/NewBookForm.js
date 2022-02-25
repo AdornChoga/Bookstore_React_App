@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../../redux/books';
 
+/* eslint-disable react/jsx-key */
+
 const NewBookForm = () => {
   const [bookInfo, setInfo] = useState({ bookTitle: '', category: '' });
   const dispatch = useDispatch();

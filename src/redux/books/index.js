@@ -1,6 +1,8 @@
 import axios from 'axios';
 import bookApp from '../../logic/local_storage';
 
+/* eslint-disable react/jsx-key */
+
 const ACTIONS = {
   INITIALIZE: 'book/state/initialize',
   ADDBOOK: 'book/add-book',
