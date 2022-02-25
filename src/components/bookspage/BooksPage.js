@@ -28,7 +28,7 @@ const BooksPage = () => {
     <main>
       {
         bookInfo.map((info) => (
-          <Book key={info.id} bookInfo={info} />
+          <Book key={Date.now()} bookInfo={info} />
         ))
       }
       <NewBookForm />
