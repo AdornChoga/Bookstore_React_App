@@ -24,18 +24,18 @@ const Book = (props) => {
   };
   return (
     <div className="books-container">
-      <ul>
-        <li className="main-info">
+      <div>
+        <div className="main-info">
           <p id="category">{category}</p>
           <h1 id="title">{title}</h1>
           <p id="author">{author}</p>
-        </li>
-        <li className="book-operations">
+        </div>
+        <div className="book-operations">
           <button type="button" className="comments">Comments</button>
           <button type="button" className="remove-book" onClick={handleRemove}>Remove</button>
           <button type="button" className="edit">Edit</button>
-        </li>
-      </ul>
+        </div>
+      </div>
       <div className="progress-and-chapter">
         <ul className="progress-scale">
           <li className="progress-bar">
