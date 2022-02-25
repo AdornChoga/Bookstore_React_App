@@ -6,6 +6,8 @@ import Book from '../book/Book';
 import NewBookForm from '../new-book-form/NewBookForm';
 import bookApp from '../../logic/local_storage';
 
+/* eslint-disable react/jsx-key */
+
 const BooksPage = () => {
   const dispatch = useDispatch();
   const bookInfo = useSelector((state) => state.addRemoveBook);

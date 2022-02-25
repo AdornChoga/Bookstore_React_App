@@ -30,17 +30,25 @@ ul {
 #category {
   font-size: 1.3rem;
   color: #888;
-  font-weight: 550;
+  font-weight: bold;
+}
+
+#category,
+#percentage,
+#completed {
+  font-family: 'Montserrat', sans-serif;
 }
 
 #title {
   color: black;
   font-size: 2rem;
+  font-family: 'Roboto Slab', serif;
 }
 
 #author {
   color: gray;
   color: #4386bf;
+  font-weight: 300;
 }
 
 .comments,
@@ -51,12 +59,19 @@ ul {
   border: none;
   cursor: pointer;
   padding-left: 0;
+  font-weight: 300;
 }
 
 .book-operations {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.book-operations button,
+#author,
+.progress {
+  font-family: 'Roboto Slab', serif;
 }
 
 .book-operations button + button {
@@ -85,6 +100,7 @@ ul {
 
 #completed {
   color: silver;
+  font-weight: normal;
 }
 
 .progress-bar {
@@ -108,6 +124,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  font-weight: 300;
 }
 
 #current-chapter {

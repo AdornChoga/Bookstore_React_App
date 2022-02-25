@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../../redux/books';
 
+/* eslint-disable react/jsx-key */
+
 const NewBookForm = () => {
   const [bookInfo, setInfo] = useState({ bookTitle: '', category: '' });
   const dispatch = useDispatch();
@@ -31,7 +33,7 @@ const NewBookForm = () => {
   return (
     <section className="add-book-section">
       <hr />
-      <h1>ADD NEW BOOK</h1>
+      <h1 className="heading">ADD NEW BOOK</h1>
       <form className="add-book-form">
         <input type="text" placeholder="Book title" className="book-input" value={bookInfo.bookTitle} onChange={handleTitle} />
         <select className="book-category" onChange={handleCategory} onClick={setDisabled}>

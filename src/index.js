@@ -7,6 +7,8 @@ import Navbar from './components/navbar/Navbar';
 import View from './view/View';
 import reportWebVitals from './reportWebVitals';
 
+/* eslint-disable react/jsx-key */
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

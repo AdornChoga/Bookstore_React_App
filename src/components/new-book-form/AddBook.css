@@ -4,9 +4,20 @@
   margin-inline: auto;
 }
 
-.add-book-section > h1 {
-  color: #888;
+hr {
+  border: 0.05rem solid silver;
+}
+
+.heading {
   font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.heading,
+.book-input,
+.book-category {
+  color: #888;
+  font-family: 'Montserrat', serif;
 }
 
 .add-book-form {
@@ -31,6 +42,8 @@
 .book-category {
   width: 25%;
   cursor: pointer;
+  border: solid silver;
+  border-radius: 0.3rem;
 }
 
 .submit-book {
@@ -39,8 +52,5 @@
   border-radius: 0.3rem;
   color: white;
   background-color: #0290ff;
-  -webkit-border-radius: 0.3rem;
-  -moz-border-radius: 0.3rem;
-  -ms-border-radius: 0.3rem;
-  -o-border-radius: 0.3rem;
+  font-family: 'Roboto Slab', serif;
 }
