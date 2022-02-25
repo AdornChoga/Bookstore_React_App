@@ -42,6 +42,8 @@ hr {
 .book-category {
   width: 25%;
   cursor: pointer;
+  border: solid silver;
+  border-radius: 0.3rem;
 }
 
 .submit-book {
