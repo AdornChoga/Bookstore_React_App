@@ -11,27 +11,40 @@ const NewBookForm = () => {
     setInfo({ ...bookInfo, bookTitle: e.target.value });
   };
   const handleCategory = (e) => {
-    setInfo({ ...bookInfo, category: e.target.value });
+    const selected = e.target.options[e.target.selectedIndex];
+    setInfo({ ...bookInfo, category: selected.value });
+  };
+  const setDisabled = (e) => {
+    e.target.options[0].disabled = true;
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payloadData = {
-      bookTitle: bookInfo.bookTitle,
-      category: bookInfo.category,
-      id: uuidv4(),
-    };
-    dispatch(addBook(payloadData));
+    if (bookInfo.bookTitle.trim() !== '' && bookInfo.category.trim() !== '') {
+      const payloadData = {
+        bookTitle: bookInfo.bookTitle,
+        category: bookInfo.category,
+        id: uuidv4(),
+      };
+      dispatch(addBook(payloadData));
+    }
   };
   return (
-    <div className="add-book-section">
+    <section className="add-book-section">
       <hr />
-      <h1>ADD NEW BOOK</h1>
+      <h1 className="heading">ADD NEW BOOK</h1>
       <form className="add-book-form">
         <input type="text" placeholder="Book title" className="book-input" value={bookInfo.bookTitle} onChange={handleTitle} />
-        <input type="text" placeholder="Category" className="book-category" value={bookInfo.category} onChange={handleCategory} />
-        <button type="submit" className="submit-book" onClick={handleSubmit}>Add Book</button>
+        <select className="book-category" onChange={handleCategory} onClick={setDisabled}>
+          <option select="true">Category</option>
+          <option value="Action">Action</option>
+          <option value="Romance">Romance</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Finance">Finance</option>
+          <option value="Drama">Drama</option>
+        </select>
+        <button type="submit" className="submit-book" onClick={handleSubmit}>ADD BOOK</button>
       </form>
-    </div>
+    </section>
   );
 };
 

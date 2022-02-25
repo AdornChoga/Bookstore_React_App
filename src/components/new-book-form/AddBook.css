@@ -1,5 +1,23 @@
 .add-book-section {
   margin-top: 3rem;
+  width: clamp(80rem, 80%, 200rem);
+  margin-inline: auto;
+}
+
+hr {
+  border: 0.05rem solid silver;
+}
+
+.heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.heading,
+.book-input,
+.book-category {
+  color: #888;
+  font-family: 'Montserrat', serif;
 }
 
 .add-book-form {
@@ -10,12 +28,27 @@
 
 .book-input {
   width: 60%;
+  outline: none;
+  border: 0.1rem solid silver;
+  border-radius: 0.3rem;
+  padding: 0.6rem;
+  font-size: 1.5rem;
+}
+
+.book-input:focus {
+  border: 0.2rem solid #4386bf;
 }
 
 .book-category {
   width: 25%;
+  cursor: pointer;
 }
 
 .submit-book {
   width: 15%;
+  border: none;
+  border-radius: 0.3rem;
+  color: white;
+  background-color: #0290ff;
+  font-family: 'Roboto Slab', serif;
 }

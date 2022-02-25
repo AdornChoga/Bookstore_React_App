@@ -1,59 +1,145 @@
 .books-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 3rem;
+  align-items: center;
+  padding: 0 12rem 0 1rem;
   margin-bottom: 2rem;
-  border: solid;
+  border: 0.1rem solid rgb(216, 215, 215);
+  background-color: #fff;
   font-size: 1.5rem;
+  min-height: 13rem;
+  width: clamp(80rem, 80%, 200rem);
+  margin-inline: auto;
 }
 
 ul {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.main-info * {
+  margin: 0;
 }
 
 #category {
-  color: gray;
+  font-size: 1.3rem;
+  color: #888;
+  font-weight: bold;
+}
+
+#category,
+#percentage,
+#completed {
+  font-family: 'Montserrat', sans-serif;
 }
 
 #title {
   color: black;
   font-size: 2rem;
+  font-family: 'Roboto Slab', serif;
 }
 
 #author {
   color: gray;
+  color: #4386bf;
+  font-weight: 300;
 }
 
-.remove-book {
+.comments,
+.remove-book,
+.edit {
   background-color: white;
-  color: blue;
+  color: #4386bf;
   border: none;
   cursor: pointer;
-}
-
-.remove-book:active {
-  transform: scale(0.8);
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
+  padding-left: 0;
+  font-weight: 300;
 }
 
 .book-operations {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
-.book-operations p + p {
+.book-operations button,
+#author,
+.progress {
+  font-family: 'Roboto Slab', serif;
+}
+
+.book-operations button + button {
   padding-left: 1rem;
-  border-left: solid;
+  border-left: solid gray;
 }
 
 .progress-and-chapter {
   display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
+.progress-and-chapter ul {
+  margin: 0;
+}
+
+.progress-scale {
+  display: flex;
+  gap: 1rem;
+}
+
+#percentage {
+  font-size: 2.5rem;
+}
+
+#completed {
+  color: silver;
+  font-weight: normal;
+}
+
+.progress-bar {
+  width: 5rem;
+  height: 5rem;
+}
+
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 16rem;
+  border-left: solid silver;
+  width: 5rem;
+  display: inline;
+  height: 7rem;
 }
 
 .progress {
+  position: relative;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-weight: 300;
+}
+
+#current-chapter {
+  color: silver;
+}
+
+#chapter {
+  font-size: 1.6rem;
+}
+
+.update-progress {
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #0290ff;
+  color: rgba(247, 241, 241, 0.644);
+  padding: 0.7rem 2rem;
+  cursor: pointer;
 }

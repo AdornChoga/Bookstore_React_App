@@ -1,0 +1,16 @@
+body {
+  background-color: #fafafa;
+}
+
+main {
+  margin-top: 4.5rem;
+  padding: 5rem 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.9);
+}
